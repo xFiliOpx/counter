@@ -1,13 +1,13 @@
 let p1Name = "Player 1";
 let p2Name = "Player 2";
 
-function check(name){
-    if(name == "p1Name"){
-        document.write(p1Name);
-    }
-    else{
-        document.write(p2Name);
-    }
+document.write(p1Name);
+
+//document.getElementById('ale').innerHTML = "p1Name";
+
+
+function player1name(){
+    document.getElementById('nwm').innerHTML = "p1Name";
 }
 
 function displayAlert(){
