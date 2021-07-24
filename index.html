@@ -4,20 +4,51 @@
         <title>1st Website!</title>
         <link rel = "stylesheet" href="style.css">
     </head>
-    <body>
-        <script src = "counter.js"></script>
+    <script src = "counter.js"></script>
+    <body id="cialo">
+        
         <div id = 'mtable'>
             <table>
                 <tr><h1>points counter</h1></tr>
                 <tr>
                     <td id="player1Name">Player 1</td>
+                    <td></td>
+                    <td id="player2Name">Player 2</td>
+                    
                 </tr>
                 <tr>
-                    <td><button id="player1Name" class="button afterButton" onclick="cos()"></button></td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <button class="button afterButton" onclick="increaseP1()"><img src="./images/plus.png" width="20" height="20"></button><br>
+                                    <button class="button afterButton" onclick="decreaseP1()"><img src="./images/minus.png" width="20" height="20"></button>
+                                </td>
+                                <td id="player1Points">0</td>
+                            </tr>
+                        </table>
+                        
+                    </td>
+                    
+                    <td id="dash" style="height: 50px;">-</td>
+
+                    <td>
+                        <table>
+                            <tr>
+                                <td id="player2Points">0</td>
+                                <td>
+                                    <button class="button afterButton" onclick="increaseP2()"><img src="./images/plus.png" width="20" height="20"></button><br>
+                                    <button class="button afterButton" onclick="decreaseP2()"><img src="./images/minus.png" width="20" height="20"></button>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="display: none;">
+                <tr>
                     <td><input id = "player1NameInput" type = "text" onchange="update()"></input></td>
-                </tr>
-                <tr>
-                    <td><button class="button afterButton" onclick="update()">update</button></td>
+                    <td><input id = "player2NameInput" type = "text" onchange="update()"></input></td>
                 </tr>
             </table>
         </div>
