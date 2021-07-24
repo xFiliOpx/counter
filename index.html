@@ -5,15 +5,17 @@
         <link rel = "stylesheet" href="style.css">
     </head>
     <body>
+        <script src = "counter.js"></script>
         <div id = 'mtable'>
-            <script src = "counter.js"></script>
+            
             <table>
                 <tr><h1>points counter</h1></tr>
                 <tr>
-                    <td><button id="nwm" class="button afterButton" onclick="cos()">:)</button></td>
+                    <td><button id="player1Name" class="button afterButton" onclick="cos()"></button></td>
+                    <td><input id = "player1NameInput" type = "text"></input></td>
                 </tr>
                 <tr>
-                    <td><button class="button afterButton" onclick="displayAlert()">button 1</button></td>
+                    <td><button class="button afterButton" on="update()">update</button></td>
                 </tr>
             </table>
         </div>

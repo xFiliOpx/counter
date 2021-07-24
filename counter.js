@@ -1,13 +1,16 @@
 let p1Name = "Player 1";
 let p2Name = "Player 2";
 
-document.write(p1Name);
+//document.getElementById('ale').innerHTML = "p1Name";nie
 
-//document.getElementById('ale').innerHTML = "p1Name";
-
+function update(){
+    document.getElementById('player1Name').innerHTML = p1Name;
+    document.getElementById('player2Name').innerHTML = p2Name;
+}
 
 function cos(){
-    document.getElementById('nwm').innerHTML = "p1Name";
+    p1Name = document.getElementById('player1NameInput').value;
+    document.getElementById('player1Name').innerHTML = p1Name;
 }
 
 function displayAlert(){
