@@ -6,7 +6,7 @@ document.write(p1Name);
 //document.getElementById('ale').innerHTML = "p1Name";
 
 
-function player1name(){
+function cos(){
     document.getElementById('nwm').innerHTML = "p1Name";
 }
 
