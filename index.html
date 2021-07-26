@@ -6,20 +6,6 @@
     </head>
     <script src = "counter.js"></script>
     <body id="cialo">
-        <div class="modal">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h5>Modal Header</h5>
-            </div>
-            <div class="modal-content">
-                <table>
-                    <tr>
-                        <td class="center"><input id = "player1NameInput" type = "text" onchange="update()"></input></td>
-                        <td class="center"><input id = "player2NameInput" type = "text" onchange="update()"></input></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
         <div id = 'mtable'>
             <table>
                 <tr>
@@ -72,6 +58,21 @@
                 </tr>
             </table>
         </div>
-       
+        <div class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h5>Modal Header</h5>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td class="center"><input id = "player1NameInput" type = "text" onchange="update()"></input></td>
+                            <td class="center"><input id = "player2NameInput" type = "text" onchange="update()"></input></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </body>
 </html> 
