@@ -9,10 +9,13 @@ let points2win = 12;
 //document.getElementById('ale').innerHTML = "p1Name";nie
 
 function update(){
-    //p1Name = document.getElementById('player1NameInput').value;
-    //p2Name = document.getElementById('player2NameInput').value;
-    document.getElementById('player1Name').innerHTML = p1Name;
-    document.getElementById('player2Name').innerHTML = p2Name;
+    p1Name = document.getElementById('player1NameInput').value;
+    p2Name = document.getElementById('player2NameInput').value;
+
+    if(document.getElementById('player1NameInput').value == ""){document.getElementById('player1Name').innerHTML = "Player 1";}
+    else {document.getElementById('player1Name').innerHTML = p1Name;}
+    if(document.getElementById('player2NameInput').value == ""){document.getElementById('player2Name').innerHTML = "Player 2";}
+    else {document.getElementById('player2Name').innerHTML = p2Name;}
 
     document.getElementById('player1Points').innerHTML = p1Points;
     document.getElementById('player2Points').innerHTML = p2Points;
@@ -61,13 +64,10 @@ function decreaseP2(){
     update();
 }
 
-
-
-function cos(){
-    p1Name = document.getElementById('player1NameInput').value;
-    document.getElementById('player1Name').innerHTML = p1Name;
+document.getElementById("settingsBtn").onclick = function(){
+    document.getElementsByClassName("modal").style.display = "block";
 }
 
-function displayAlert(){
-    alert("alerteryrye");
+document.getElementsByClassName("close").onclick = function(){
+    document.getElementsByClassName("modal").style.display = "none";
 }

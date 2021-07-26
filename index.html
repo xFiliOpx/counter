@@ -6,51 +6,72 @@
     </head>
     <script src = "counter.js"></script>
     <body id="cialo">
-        
+        <div class="modal">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h5>Modal Header</h5>
+            </div>
+            <div class="modal-content">
+                <table>
+                    <tr>
+                        <td class="center"><input id = "player1NameInput" type = "text" onchange="update()"></input></td>
+                        <td class="center"><input id = "player2NameInput" type = "text" onchange="update()"></input></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <div id = 'mtable'>
             <table>
-                <tr><h1>points counter</h1></tr>
-                <tr>
-                    <td id="player1Name">Player 1</td>
-                    <td></td>
-                    <td id="player2Name">Player 2</td>
-                    
-                </tr>
                 <tr>
                     <td>
                         <table>
+                            <tr><h1>points counter</h1></tr>
+                            <tr>
+                                <td id="player1Name">Player 1</td>
+                                <td>-</td>
+                                <td id="player2Name">Player 2</td>
+                                
+                            </tr>
                             <tr>
                                 <td>
-                                    <button class="button afterButton" onclick="increaseP1()"><img src="./images/plus.png" width="20" height="20"></button><br>
-                                    <button class="button afterButton" onclick="decreaseP1()"><img src="./images/minus.png" width="20" height="20"></button>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <button class="button afterPointsButton" onclick="increaseP1()"><img src="./images/plus.png" width="20" height="20"></button><br>
+                                                <button class="button afterPointsButton" onclick="decreaseP1()"><img src="./images/minus.png" width="20" height="20"></button>
+                                            </td>
+                                            <td id="player1Points">0</td>
+                                        </tr>
+                                    </table>
+                                    
                                 </td>
-                                <td id="player1Points">0</td>
-                            </tr>
-                        </table>
-                        
-                    </td>
-                    
-                    <td id="dash" style="height: 50px;">-</td>
-
-                    <td>
-                        <table>
-                            <tr>
-                                <td id="player2Points">0</td>
+                                
+                                <td id="dash" style="height: 50px;">-</td>
+            
                                 <td>
-                                    <button class="button afterButton" onclick="increaseP2()"><img src="./images/plus.png" width="20" height="20"></button><br>
-                                    <button class="button afterButton" onclick="decreaseP2()"><img src="./images/minus.png" width="20" height="20"></button>
+                                    <table>
+                                        <tr>
+                                            <td id="player2Points">0</td>
+                                            <td>
+                                                <button class="button afterPointsButton" onclick="increaseP2()"><img src="./images/plus.png" width="20" height="20"></button><br>
+                                                <button class="button afterPointsButton" onclick="decreaseP2()"><img src="./images/minus.png" width="20" height="20"></button>
+                                        </tr>
+                                    </table>
+                                </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
-            </table>
-
-            <table style="display: none;">
                 <tr>
-                    <td><input id = "player1NameInput" type = "text" onchange="update()"></input></td>
-                    <td><input id = "player2NameInput" type = "text" onchange="update()"></input></td>
+                    <td>
+                        <table class="center">
+                            <tr><td><button class="button afterButton" onclick="update()">New Match</button></td></tr>
+                            <tr><td><button id="settingsBtn" class="button afterButton">Settings</button></td></tr>
+                        </table>
+                    </td>
                 </tr>
             </table>
         </div>
+       
     </body>
 </html> 
