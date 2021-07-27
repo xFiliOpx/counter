@@ -6,7 +6,7 @@
     </head>
     <script src = "counter.js"></script>
     <body id="cialo">
-        <div id = 'mtable'>
+        <div>
             <table>
                 <tr>
                     <td>
@@ -52,17 +52,17 @@
                     <td>
                         <table class="center">
                             <tr><td><button class="button afterButton" onclick="update()">New Match</button></td></tr>
-                            <tr><td><button id="settingsBtn" class="button afterButton">Settings</button></td></tr>
+                            <tr><td><button id="settingsBtn" class="button afterButton" onclick="settingsBtn()">Settings</button></td></tr>
                         </table>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="modal">
+        <div id="set-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h5>Modal Header</h5>
+                    <span class="close" onclick="modalClose()">&times;</span>
+                    Modal Header
                 </div>
                 <div class="modal-body">
                     <table>
@@ -74,5 +74,15 @@
                 </div>
             </div>
         </div>
+        <script>
+            function settingsBtn(){
+                let moda = document.getElementById('set-modal');
+                moda.style.display = "block";
+            }
+
+            function modalClose(){
+                document.getElementById("set-modal").style.display = "none";
+            }
+        </script>
     </body>
 </html> 

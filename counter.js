@@ -6,8 +6,6 @@ let p2Points = 0;
 
 let points2win = 12;
 
-//document.getElementById('ale').innerHTML = "p1Name";nie
-
 function update(){
     p1Name = document.getElementById('player1NameInput').value;
     p2Name = document.getElementById('player2NameInput').value;
@@ -64,10 +62,3 @@ function decreaseP2(){
     update();
 }
 
-document.getElementById("settingsBtn").onclick = function(){
-    document.getElementsByClassName("modal").style.display = "block";
-}
-
-document.getElementsByClassName("close").onclick = function(){
-    document.getElementsByClassName("modal").style.display = "none";
-}
