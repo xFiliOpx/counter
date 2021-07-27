@@ -62,3 +62,15 @@ function decreaseP2(){
     update();
 }
 
+function settingsBtn(){
+    let moda = document.getElementById('set-modal');
+    moda.style.display = "block";
+}
+
+function modalClose(){
+    document.getElementById('modalContent').className = "modalClose";
+    setTimeout(()=>{
+        document.getElementById('set-modal').style.display = "none";
+        document.getElementById('modalContent').className = "modal-content";
+    },400);
+}
