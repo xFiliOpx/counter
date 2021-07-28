@@ -4,26 +4,32 @@ let p2Name = "Player 2";
 let p1Points = 0;
 let p2Points = 0;
 
-let points2win = 12;
+let points2win = 11;
+let pointsPerServe = 2;
+
+let p1First = true;
 
 function update(){
-    p1Name = document.getElementById('player1NameInput').value;
-    p2Name = document.getElementById('player2NameInput').value;
+    if(document.getElementById('player1NameInput').value == null){p1Name = "Player 1";}
+    else{p1Name = document.getElementById('player1NameInput').value;}
 
-    if(document.getElementById('player1NameInput').value == ""){document.getElementById('player1Name').innerHTML = "Player 1";}
-    else {document.getElementById('player1Name').innerHTML = p1Name;}
-    if(document.getElementById('player2NameInput').value == ""){document.getElementById('player2Name').innerHTML = "Player 2";}
-    else {document.getElementById('player2Name').innerHTML = p2Name;}
+    if(document.getElementById('player2NameInput').value == null){p2Name = "Player 2";}
+    else{p2Name = document.getElementById('player2NameInput').value;}
+
+    document.getElementById('player1Name').innerHTML = p1Name;
+    document.getElementById('player2Name').innerHTML = p2Name;
 
     document.getElementById('player1Points').innerHTML = p1Points;
     document.getElementById('player2Points').innerHTML = p2Points;
 
-    if(document.getElementById('p1First').checked){
-        document.getElementById('firstServeIndycator').innerHTML = "<- first";
-    }
-    else{
-        document.getElementById('firstServeIndycator').innerHTML = "first ->";
-    }
+    if(document.getElementById('points2Win').value == null){points2win = document.getElementById('points2Win').value;}
+    else{points2win = 11;}
+
+    if(document.getElementById('pointsPerServe').value == null){pointsPerServe = document.getElementById('pointsPerServe').value;}
+    else{pointsPerServe = 2;}
+
+    if(document.getElementById('p1First').checked || document.getElementById('p1First').checked == null){p1First = true;}
+    else{p1First = false;}
 }
 
 function checkWinner(){
@@ -36,7 +42,16 @@ function checkWinner(){
     }
 }
 function checkServ(){
-    if(((p1Points + p2Points) % 3) == 0){
+    let sum = p1Points + p2Points;
+
+    if((sum % pointsPerServe) == 0){
+        if((sum % 2 == 0 && p1First) || (sum % 2 == 1 && !p1First)){
+            document.getElementById('nowServing').innerHTML = "now serving " + p1Name;
+        }
+        else{
+            document.getElementById('nowServing').innerHTML = "now serving " + p2Name;
+        }
+
         document.getElementById("cialo").style.backgroundColor = "red";
         setTimeout(()=>{document.getElementById("cialo").style.backgroundColor = "black"},1000);
     }
@@ -72,6 +87,7 @@ function decreaseP2(){
 function resetPoints(){
     p1Points = 0;
     p2Points = 0;
+    checkWinner();
     update();
 }
 
