@@ -17,6 +17,13 @@ function update(){
 
     document.getElementById('player1Points').innerHTML = p1Points;
     document.getElementById('player2Points').innerHTML = p2Points;
+
+    if(document.getElementById('p1First').checked){
+        document.getElementById('firstServeIndycator').innerHTML = "<- first";
+    }
+    else{
+        document.getElementById('firstServeIndycator').innerHTML = "first ->";
+    }
 }
 
 function checkWinner(){
@@ -59,6 +66,12 @@ function decreaseP2(){
         p2Points++;
     }
     checkWinner();
+    update();
+}
+
+function resetPoints(){
+    p1Points = 0;
+    p2Points = 0;
     update();
 }
 
