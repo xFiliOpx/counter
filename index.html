@@ -65,45 +65,55 @@
         </div>
         <div id="set-modal" class="modal">
             <div id="modalContent" class="modal-content">
-                <div class="modal-header">
-                    <span class="close" onclick="modalClose()">&times;</span>
-                    <h3>Settings</h3>
-                </div>
-                <div class="modal-body">
-                    <table>
-                        <tr class="modal-body-row">
-                            <td class="modal-body-d">
+                <table id="modal-table">
+                    <tr>
+                        <td>
+                            <div class="modal-header">
+                                <span class="close" onclick="modalClose()">&times;</span>
+                                <h3>Settings</h3>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="modal-body">
                                 <table>
-                                    <tr>
-                                        <td><input id = "player1NameInput" type = "text" onchange="update()" placeholder="Player 1"></input></td>
-                                        <td>names</td>
-                                        <td><input id = "player2NameInput" type = "text" onchange="update()" placeholder="Player 2"></input></td>
+                                    <tr class="modal-body-row">
+                                        <td class="modal-body-d">
+                                            <table>
+                                                <tr>
+                                                    <td><input id = "player1NameInput" type = "text" onchange="update()" placeholder="Player 1" value="Player 1"></input></td>
+                                                    <td>names</td>
+                                                    <td><input id = "player2NameInput" type = "text" onchange="update()" placeholder="Player 2" value="Player 2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>&#8679;</span> first <input id = "p1First" name="first" type = "radio" onclick="changeServe()" checked></input> <span>&#8679;</span></td>
+                                                    <td id="firstServeIndycator">first serve</td>
+                                                    <td><span>&#8679;</span> first <input id = "p2First" name="first" type = "radio" onclick="changeServe()"></input> <span>&#8679;</span></td>
+                                                </tr>
+                                            </table>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td><span>&#8679;</span> first <input id = "p1First" name="first" type = "radio" onchange="update()"></input> <span>&#8679;</span></td>
-                                        <td id="firstServeIndycator">first serve</td>
-                                        <td><span>&#8679;</span> first <input id = "p2First" name="first" type = "radio" onchange="update()"></input> <span>&#8679;</span></td>
+                                    <tr class="modal-body-row">
+                                        <td class="modal-body-d">
+                                            <table>
+                                                <tr>
+                                                    <td>points 2 win</td>
+                                                    <td><input id = "points2Win" type = "number" onchange="update()" placeholder="11" value="11"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>points per serve</td>
+                                                    <td><input id = "pointsPerServe" type = "number" onchange="update()" placeholder="2" value="2"></input></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        
                                     </tr>
                                 </table>
-                            </td>
-                        </tr>
-                        <tr class="modal-body-row">
-                            <td class="modal-body-d">
-                                <table>
-                                    <tr>
-                                        <td>points 2 win</td>
-                                        <td><input id = "points2Win" type = "number" onchange="update()" placeholder="11"></input></td>
-                                    </tr>
-                                    <tr>
-                                        <td>points per serve</td>
-                                        <td><input id = "pointsPerServe" type = "number" onchange="update()" placeholder="2"></input></td>
-                                    </tr>
-                                </table>
-                            </td>
-                            
-                        </tr>
-                    </table>
-                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </body>

@@ -15,7 +15,7 @@ body{
 }
 
 table, td, tr{
-    border: 0px solid red;
+    border: 1px solid red;
 }
 
 td{
@@ -37,6 +37,7 @@ td{
     color: white;
     padding: 20px 32px;
     font-size: 16px;
+    border-radius: 10px;
 
     cursor: pointer;
     transition-duration: 400ms;
@@ -59,11 +60,13 @@ td{
 
 .modal{
     display: none;
-    position: fixed ;
+    position:fixed;
+    
+
     z-index: 1;
     left: 0;
     top: 0;
-    overflow:unset;
+    
     background-color: none;
     padding: 20px;
     border: 0px solid #888;
@@ -72,18 +75,31 @@ td{
 }
 
 .modal-content{
-    position: fixed;
+    position:fixed;
     bottom: 100px;
     top: 200px;
     left: 200px;
     right: 200px;
     background-color: black;
     border: 1px solid white;
+    border-radius: 10px;
+
+    overflow-y: auto;
+    max-height: 350px;
 
     opacity: 1;
     
     animation-name: slideIn;
     animation-duration: 0.4s
+}
+
+#modal-table{
+    display: flex;
+    justify-content: center;
+
+    background-color: none;
+    border: none;
+    border-radius: 10px;
 }
 
 .modalClose{
@@ -92,8 +108,9 @@ td{
     top: 100%;
     left: 200px;
     right: 200px;
-    background-color: black;
-    border: 1px solid white;
+    background-color: none;
+    border: none;
+    border-radius: 10px;
     opacity: 0;
 
     animation-name: slideOut;
@@ -165,11 +182,11 @@ input[type=number], input[type=number]:active{
 }
 
 @keyframes slideIn {
-    from {bottom: -300px;top: 100%; opacity: 0}
-    to {bottom: 100px; top: 200px; opacity: 1}
+    from {top: 100%; opacity: 0}
+    to {top: 200px; opacity: 1}
 }
 
 @keyframes slideOut {
-    from {bottom: 100px; top: 200px; opacity: 1}
-    to {bottom: -300px;top: 100%; opacity: 0}
+    from {top: 200px; opacity: 1}
+    to {top: 100%; opacity: 0}
 }
