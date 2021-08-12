@@ -1,56 +1,117 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>1st Website!</title>
+        <title>points counter</title>
         <link rel = "stylesheet" href="style.css">
     </head>
     <script src = "counter.js"></script>
     <body id="cialo">
-        
-        <div id = 'mtable'>
+        <div>
             <table>
-                <tr><h1>points counter</h1></tr>
-                <tr>
-                    <td id="player1Name">Player 1</td>
-                    <td></td>
-                    <td id="player2Name">Player 2</td>
-                    
-                </tr>
                 <tr>
                     <td>
                         <table>
+                            <tr><h1>points counter</h1></tr>
+                            <tr>
+                                <td id="player1Name">Player 1</td>
+                                <td>-</td>
+                                <td id="player2Name">Player 2</td>
+                            </tr>
                             <tr>
                                 <td>
-                                    <button class="button afterButton" onclick="increaseP1()"><img src="./images/plus.png" width="20" height="20"></button><br>
-                                    <button class="button afterButton" onclick="decreaseP1()"><img src="./images/minus.png" width="20" height="20"></button>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <button class="button afterPointsButton" onclick="increaseP1()"><img src="./images/plus.png" width="20" height="20"></button><br>
+                                                <button class="button afterPointsButton" onclick="decreaseP1()"><img src="./images/minus.png" width="20" height="20"></button>
+                                            </td>
+                                            <td id="player1Points">0</td>
+                                        </tr>
+                                    </table>
                                 </td>
-                                <td id="player1Points">0</td>
-                            </tr>
-                        </table>
-                        
-                    </td>
-                    
-                    <td id="dash" style="height: 50px;">-</td>
-
-                    <td>
-                        <table>
-                            <tr>
-                                <td id="player2Points">0</td>
+                                <td id="dash" style="height: 50px;">-</td>
                                 <td>
-                                    <button class="button afterButton" onclick="increaseP2()"><img src="./images/plus.png" width="20" height="20"></button><br>
-                                    <button class="button afterButton" onclick="decreaseP2()"><img src="./images/minus.png" width="20" height="20"></button>
+                                    <table>
+                                        <tr>
+                                            <td id="player2Points">0</td>
+                                            <td>
+                                                <button class="button afterPointsButton" onclick="increaseP2()"><img src="./images/plus.png" width="20" height="20"></button><br>
+                                                <button class="button afterPointsButton" onclick="decreaseP2()"><img src="./images/minus.png" width="20" height="20"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="nowServing">now serving Player 1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="center">
+                            <tr>
+                                <td><button class="button afterButton" onclick="resetPoints()">New Match</button></td>
+                                <td><button id="settingsBtn" class="button afterButton" onclick="settingsBtn()">Settings</button>
                             </tr>
                         </table>
                     </td>
                 </tr>
             </table>
-
-            <table style="display: none;">
-                <tr>
-                    <td><input id = "player1NameInput" type = "text" onchange="update()"></input></td>
-                    <td><input id = "player2NameInput" type = "text" onchange="update()"></input></td>
-                </tr>
-            </table>
+        </div>
+        <div id="set-modal" class="modal">
+            <div id="modalContent" class="modal-content">
+                <span class="close" onclick="modalClose()">&times;</span>
+                <table id="modal-table">
+                    <tr>
+                        <td>
+                            <div class="modal-header">
+                                
+                                <h3>Settings</h3>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="modal-body">
+                                <table>
+                                    <tr class="modal-body-row">
+                                        <td class="modal-body-d">
+                                            <table>
+                                                <tr>
+                                                    <td><input id = "player1NameInput" type = "text" onchange="update()" placeholder="Player 1" value="Player 1"></input></td>
+                                                    <td>names</td>
+                                                    <td><input id = "player2NameInput" type = "text" onchange="update()" placeholder="Player 2" value="Player 2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>&#8679;</span> first <input id = "p1First" name="first" type = "radio" onclick="changeServe()" checked></input> <span>&#8679;</span></td>
+                                                    <td id="firstServeIndycator">first serve</td>
+                                                    <td><span>&#8679;</span> first <input id = "p2First" name="first" type = "radio" onclick="changeServe()"></input> <span>&#8679;</span></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr class="modal-body-row">
+                                        <td class="modal-body-d">
+                                            <table>
+                                                <tr>
+                                                    <td>points 2 win</td>
+                                                    <td><input id = "points2Win" type = "number" onchange="update()" placeholder="11" value="11"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>points per serve</td>
+                                                    <td><input id = "pointsPerServe" type = "number" onchange="update()" placeholder="2" value="2"></input></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </body>
 </html> 
