@@ -57,6 +57,19 @@ function checkServ(){
         setTimeout(()=>{document.getElementById("cialo").style.backgroundColor = "black"},1000);
     }
 }
+function invisibleCheckServ(){let sum = p1Points + p2Points;
+
+    if((sum % pointsPerServe) == 0){
+        if((Math.round(sum / pointsPerServe) % 2 == 0 && p1First) || (Math.round(sum / pointsPerServe) % 2 == 1 && !p1First)){
+            console.log("player 1");
+            document.getElementById('nowServing').innerHTML = "now serving " + p1Name;
+        }
+        else{
+            console.log("player 2");
+            document.getElementById('nowServing').innerHTML = "now serving " + p2Name;
+        }
+    }
+}
 
 function increaseP1(){
     p1Points++;
@@ -94,7 +107,7 @@ function resetPoints(){
 
 function changeServe(){
     update();
-    checkServ();
+    invisibleCheckServ();
 }
 
 function settingsBtn(){
@@ -103,6 +116,9 @@ function settingsBtn(){
 }
 
 function modalClose(){
+    update();
+    invisibleCheckServ();
+
     document.getElementById('modalContent').className = "modalClose";
     setTimeout(()=>{
         document.getElementById('set-modal').style.display = "none";

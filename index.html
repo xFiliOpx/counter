@@ -16,7 +16,6 @@
                                 <td id="player1Name">Player 1</td>
                                 <td>-</td>
                                 <td id="player2Name">Player 2</td>
-                                
                             </tr>
                             <tr>
                                 <td>
@@ -29,11 +28,8 @@
                                             <td id="player1Points">0</td>
                                         </tr>
                                     </table>
-                                    
                                 </td>
-                                
                                 <td id="dash" style="height: 50px;">-</td>
-            
                                 <td>
                                     <table>
                                         <tr>
@@ -41,6 +37,7 @@
                                             <td>
                                                 <button class="button afterPointsButton" onclick="increaseP2()"><img src="./images/plus.png" width="20" height="20"></button><br>
                                                 <button class="button afterPointsButton" onclick="decreaseP2()"><img src="./images/minus.png" width="20" height="20"></button>
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
@@ -65,11 +62,12 @@
         </div>
         <div id="set-modal" class="modal">
             <div id="modalContent" class="modal-content">
+                <span class="close" onclick="modalClose()">&times;</span>
                 <table id="modal-table">
                     <tr>
                         <td>
                             <div class="modal-header">
-                                <span class="close" onclick="modalClose()">&times;</span>
+                                
                                 <h3>Settings</h3>
                             </div>
                         </td>
@@ -107,7 +105,6 @@
                                                 </tr>
                                             </table>
                                         </td>
-                                        
                                     </tr>
                                 </table>
                             </div>
