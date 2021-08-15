@@ -7,7 +7,7 @@ let p2Points = 0;
 let points2win = 11;
 let pointsPerServe = 2;
 
-let p1First = true;
+let p1First;
 
 function update(){
     if(document.getElementById('player1NameInput').value == null){p1Name = "Player 1";}
@@ -25,10 +25,13 @@ function update(){
     if(document.getElementById('points2Win').value == null){points2win = 11;}
     else{points2win = document.getElementById('points2Win').value;}
 
-    console.log(document.getElementById('points2Win').value);
-
     if(document.getElementById('pointsPerServe').value == null){pointsPerServe = 2;}
     else{pointsPerServe = document.getElementById('pointsPerServe').value;}
+
+    if(document.getElementsByName('first')[0].checked){p1First = true;}
+    else if(document.getElementsByName('first')[1].checked){p1First = false;}
+
+    console.log(p1First);
 }
 
 function checkWinner(){
@@ -45,11 +48,9 @@ function checkServ(){
 
     if((sum % pointsPerServe) == 0){
         if((Math.round(sum / pointsPerServe) % 2 == 0 && p1First) || (Math.round(sum / pointsPerServe) % 2 == 1 && !p1First)){
-            console.log("player 1");
             document.getElementById('nowServing').innerHTML = "now serving " + p1Name;
         }
         else{
-            console.log("player 2");
             document.getElementById('nowServing').innerHTML = "now serving " + p2Name;
         }
 
@@ -61,11 +62,9 @@ function invisibleCheckServ(){let sum = p1Points + p2Points;
 
     if((sum % pointsPerServe) == 0){
         if((Math.round(sum / pointsPerServe) % 2 == 0 && p1First) || (Math.round(sum / pointsPerServe) % 2 == 1 && !p1First)){
-            console.log("player 1");
             document.getElementById('nowServing').innerHTML = "now serving " + p1Name;
         }
         else{
-            console.log("player 2");
             document.getElementById('nowServing').innerHTML = "now serving " + p2Name;
         }
     }
