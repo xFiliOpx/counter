@@ -135,8 +135,6 @@ td{
     justify-content: center;
 }
 
-#firstServeIndycator {text-decoration: line-through;}
-
 .modal-body-d{padding: 0 16px;margin: 0;}
 
 .close {
@@ -162,8 +160,8 @@ input[type=text]{
     font-size: 20px;
     background-color: black;
     color: white;
-    border: none;
-    border-bottom: 1px solid white;
+    border: 1px solid white;
+    border-radius: 3px;
 }
 
 input[type=radio]{
